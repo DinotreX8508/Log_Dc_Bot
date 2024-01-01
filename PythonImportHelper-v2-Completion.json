@@ -1,0 +1,64 @@
+[
+    {
+        "label": "discord",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "discord",
+        "description": "discord",
+        "detail": "discord",
+        "documentation": {}
+    },
+    {
+        "label": "commands",
+        "importPath": "discord.ext",
+        "description": "discord.ext",
+        "isExtraImport": true,
+        "detail": "discord.ext",
+        "documentation": {}
+    },
+    {
+        "label": "create_log_embed",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def create_log_embed(kullanici, kullanici_adi, kullanici_yasi):\n    log_embed = discord.Embed(\n        title=\"Kullanıcı Kaydedildi\",\n        description=f\"{kullanici.mention} adlı kullanıcı başarıyla kaydedildi!\",\n        color=0x42f56c  # Embed rengi\n    )\n    log_embed.add_field(name=\"Kullanıcı Adı\", value=kullanici_adi, inline=False)\n    log_embed.add_field(name=\"Kullanıcı Yaşı\", value=kullanici_yasi, inline=False)\n    log_embed.set_thumbnail(url=kullanici.avatar_url)  # Kullanıcının profili\n    log_embed.set_footer(text=\"Profil\", icon_url=\"https://i.imgur.com/your_logo.png\")  # Botun logosu veya simgesi",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "intents",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "intents = discord.Intents.all()\nbot = commands.Bot(command_prefix=\"m!\", intents=intents)\n# Ayarlar\nadmin_role_name = \"Kurucu\"  # Admin rolünün ismi\nlog_channel_id = None  # Log kanalının ID'si\n@bot.event\nasync def on_ready():\n    print(f'Logged in as {bot.user.name}')\n@bot.event\nasync def on_command_error(ctx, error):",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "bot",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "bot = commands.Bot(command_prefix=\"m!\", intents=intents)\n# Ayarlar\nadmin_role_name = \"Kurucu\"  # Admin rolünün ismi\nlog_channel_id = None  # Log kanalının ID'si\n@bot.event\nasync def on_ready():\n    print(f'Logged in as {bot.user.name}')\n@bot.event\nasync def on_command_error(ctx, error):\n    if isinstance(error, commands.CommandNotFound):",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "admin_role_name",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "admin_role_name = \"Kurucu\"  # Admin rolünün ismi\nlog_channel_id = None  # Log kanalının ID'si\n@bot.event\nasync def on_ready():\n    print(f'Logged in as {bot.user.name}')\n@bot.event\nasync def on_command_error(ctx, error):\n    if isinstance(error, commands.CommandNotFound):\n        await ctx.send(\"Böyle bir komut bulunmamaktadır.\")\n@bot.command(name=\"kayit\")",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "log_channel_id",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "log_channel_id = None  # Log kanalının ID'si\n@bot.event\nasync def on_ready():\n    print(f'Logged in as {bot.user.name}')\n@bot.event\nasync def on_command_error(ctx, error):\n    if isinstance(error, commands.CommandNotFound):\n        await ctx.send(\"Böyle bir komut bulunmamaktadır.\")\n@bot.command(name=\"kayit\")\nasync def kayit(ctx, hedef_kullanici: discord.Member, *, yeni_bilgiler):",
+        "detail": "main",
+        "documentation": {}
+    }
+]
